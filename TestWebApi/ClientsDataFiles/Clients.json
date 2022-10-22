@@ -1,0 +1,52 @@
+[
+  {
+    "firstname": "Микола",
+    "lastname": "Гудз",
+    "middlename": "Дмитрович",
+    "phone": "0671112233",
+    "addressCity": "Київ",
+    "street": "пересічна",
+    "apartment": "33",
+    "house": "5а"
+  },
+  {
+    "firstname": "Наталія",
+    "lastname": "Гудз",
+    "middlename": "Іванівна",
+    "phone": "0671112233",
+    "addressCity": "Київ",
+    "street": "пересічна",
+    "apartment": "33",
+    "house": "5а"
+  },
+  {
+    "firstname": "Володимир",
+    "lastname": "Прокопенко",
+    "middlename": "Анатолійович",
+    "phone": "0509954715",
+    "addressCity": "Львів",
+    "street": "Івана Франка",
+    "apartment": "16",
+    "house": "7b"
+  },
+  {
+    "firstname": "Володимир",
+    "lastname": "Войт",
+    "middlename": "Іванович",
+    "phone": "0981058715",
+    "addressCity": "Львів",
+    "street": "Межова",
+    "apartment": "23",
+    "house": "7a"
+  },
+  {
+    "firstname": "Марія",
+    "lastname": "Войт",
+    "middlename": "Василівна",
+    "phone": "0981058715",
+    "addressCity": "Львів",
+    "street": "Межова",
+    "apartment": "23",
+    "house": "7a"
+  }
+]
