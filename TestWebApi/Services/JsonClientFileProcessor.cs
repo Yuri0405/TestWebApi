@@ -6,17 +6,23 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Unicode;
 using System.Text.Encodings.Web;
-
+using Microsoft.Extensions.Configuration;
 
 namespace TestWebApi.Services
 {
     public class JsonClientFileProcessor
     {
+        private readonly string _path;
+
+        public JsonClientFileProcessor(IConfiguration configuration)
+        {
+            _path = configuration.GetSection("ClientDataFolder").Value;
+        }
         public async Task<List<Client>> GetClients(string phoneNumber)
         {
             List<Client> clients = new List<Client>();
             
-            using(FileStream fs = new FileStream("D:/Some projects/TestWebApi/TestWebApi/ClientsDataFiles/Clients.json",FileMode.Open))
+            using(FileStream fs = new FileStream(_path,FileMode.OpenOrCreate))
             {
 
                 clients = await JsonSerializer.DeserializeAsync<List<Client>>(fs);
@@ -30,14 +36,14 @@ namespace TestWebApi.Services
         {
             List<Client> clients = new List<Client>();
 
-            using (FileStream fs = new FileStream("D:/Some projects/TestWebApi/TestWebApi/ClientsDataFiles/Clients.json", FileMode.Open))
+            using (FileStream fs = new FileStream(_path, FileMode.OpenOrCreate))
             {
 
                 clients = await JsonSerializer.DeserializeAsync<List<Client>>(fs);
 
             }
 
-            using (FileStream fs = new FileStream("D:/Some projects/TestWebApi/TestWebApi/ClientsDataFiles/Clients.json", FileMode.Create))
+            using (FileStream fs = new FileStream(_path, FileMode.Create))
             {
                 clients.Add(client);
                 var options = new JsonSerializerOptions
